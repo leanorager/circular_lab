@@ -20,4 +20,21 @@ console.log(data);
 
 <Layout>
   <h1>Min side</h1>
+  {
+    data.map((event) => {
+      const date = new Date(event.event_date);
+      const formattedDate = date.toLocaleDateString("da-DK", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      return (
+        <article>
+          <h2>{event.event_title}</h2>
+          <p>{event.event_description}</p>
+          <p>Dato: {formattedDate}</p>
+        </article>
+      );
+    })
+  }
 </Layout>
