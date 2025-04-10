@@ -1,0 +1,37 @@
+:root {
+  --sekundarycol: #003b5c;
+  --rosa: #f5a8a1;
+  --pink: #eb5c8e;
+  --drkpurp: #664f60;
+  --lightblue: #5dc4e5;
+  --brandcol: #ff7500;
+  --yellow: #ffda48;
+  --turquoise: #73c3ac;
+  --green: #79bf80;
+  --purple: #9f96c9;
+  --bg-grey: #ededed;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+@font-face {
+  font-family: "helveticaneueltstd_blk";
+  src: url("../fonts/helveticaneueltstd_blk.otf") format("opentype");
+}
+@font-face {
+  font-family: "HelveticaNeue-Roman";
+  src: url("../fonts/HelveticaNeue-Roman.otf") format("opentype");
+}
+h1,
+h2,
+h3 {
+  font-family: "helveticaneueltstd_blk";
+}
+
+h4 {
+  font-family: "HelveticaNeue-Roman";
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
