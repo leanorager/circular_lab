@@ -1,4 +1,4 @@
-# Teknisk dokumentation for Tema 8 gruppeprojekt
+# Teknisk dokumentation for Tema 9 gruppeprojekt
 
 Når man er flere der bidrager til en kodebase, lærer man hurtigt, at ens sædvanlige måder at gøre tingene på ikke nødvendigvis er logisk for alle.
 Skriv derfor jeres fælles retningslinjer for punkterne herunder(tilføj gerne flere selv), sådan som det giver bedst mening for jer som gruppe. Dokumentationen sikre, at jeres fælles kodebase forbliver overskuelig, er let at arbejde med og til at forstå for alle, og at I undgå konflikter, og har nemmere ved at hjælpe hinanden undervejs.
@@ -22,8 +22,8 @@ Beslut, hvordan I vil organisere jeres projekt – struktur for mapper og filer.
 
 Beslutte hvordan i vil navngive filer og mapper for at sikre en ensartet struktur og undgå forvirring.>
 
-- Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller \_)
-  pages/sider skal forholdes små bogstaver, ingen mellemrum og brug af - og \_
+- Hvordan navngiver I filnavne? (fx små bogstaver, ingen mellemrum, brug af - eller _)
+  pages/sider skal forholdes små bogstaver, ingen mellemrum og brug af - og _
 
 Men med components, så SKAL de åbenbart have Stort første bogstav.
 
