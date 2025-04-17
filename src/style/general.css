@@ -1,10 +1,10 @@
 :root {
-  --sekundarycol: #003b5c;
+  --secondary-col: #003b5c;
   --rosa: #f5a8a1;
   --pink: #eb5c8e;
   --drkpurp: #664f60;
   --lightblue: #5dc4e5;
-  --brandcol: #ff7500;
+  --brand-col: #ff7500;
   --yellow: #ffda48;
   --turquoise: #73c3ac;
   --green: #79bf80;
@@ -24,8 +24,10 @@
 }
 h1,
 h2,
-h3 {
+h3,
+h5 {
   font-family: "helveticaneueltstd_blk";
+  color: var(--secondary-col);
 }
 
 h4 {
@@ -34,4 +36,56 @@ h4 {
 
 p {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 22px;
+}
+h5 {
+  font-size: 20px;
+}
+p {
+  font-size: 18px;
+}
+.p-smaller {
+  font-size: 14px;
+}
+.p-bigger {
+  font-size: 22px;
+}
+
+@media screen and (min-width: 850px) {
+  h1 {
+    font-size: 100px;
+  }
+  h2 {
+    font-size: 50px;
+  }
+  h3 {
+    font-size: 34px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 24px;
+  }
+  .p-smaller {
+    font-size: 20px;
+  }
+  .p-bigger {
+    font-size: 34px;
+  }
 }
