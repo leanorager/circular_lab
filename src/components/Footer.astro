@@ -1,0 +1,87 @@
+---
+import logoFooter from "../assets/logo-footer.svg";
+import facebookLogo from "../assets/facebook-logo.svg";
+import instagramLogo from "../assets/instagram-logo.svg";
+import linkedInLogo from "../assets/linkedin-logo.svg";
+import mailLogo from "../assets/mail-logo.svg";
+---
+
+<footer>
+  <div class="grid_1-1">
+    <img class="logo" src={logoFooter.src} alt="Logo" />
+    <div class="col">
+      <h3>Åbningstider</h3>
+      <p>Åbent kl 8:30-22:00 hver dag.</p>
+      <h3>Sociale medier - Kontakt os</h3>
+      <div class="flex_socials">
+        <a href="https://www.facebook.com/">
+          <img src={facebookLogo.src} alt="Facebook" /></a
+        >
+        <a href="https://www.instagram.com/kea_circularlab/">
+          <img src={instagramLogo.src} alt="Instagram" /></a
+        >
+        <a href="https://www.linkedin.com/in/nikolaj-storm-tost-9b523983/">
+          <img src={linkedInLogo.src} alt="LinkedIn" /></a
+        >
+        <a href="mailto:circular@kea.dk">
+          <img src={mailLogo.src} alt="Mail" /></a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--darker-grey);
+    color: var(--color-white);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo {
+    margin: 50px auto;
+  }
+
+  p {
+    margin-bottom: 30px;
+  }
+
+  .flex_socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 50px;
+  }
+
+  .flex_socials img {
+    margin-top: 7px;
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 850px) {
+    footer {
+      padding: 30px;
+      text-align: left;
+    }
+
+    .grid_1-1 {
+      max-width: 1300px;
+      margin: 100px 0;
+      justify-self: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+    }
+    .flex_socials {
+      justify-content: flex-start;
+    }
+  }
+  @media (min-width: 1000px) {
+    .grid_1-1 {
+      margin: 200px 0;
+      gap: 200px;
+    }
+  }
+</style>

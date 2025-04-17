@@ -2,7 +2,7 @@
   --secondary-col: #003b5c;
   --rosa: #f5a8a1;
   --pink: #eb5c8e;
-  --drkpurp: #664f60;
+  --darkpurp: #664f60;
   --lightblue: #5dc4e5;
   --brand-col: #ff7500;
   --yellow: #ffda48;
@@ -12,6 +12,21 @@
   --bg-grey: #ededed;
   --black: #000000;
   --white: #ffffff;
+  --darker-grey: #d9d9d9;
+  --darkest-grey: #4b4b4b;
+}
+
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @font-face {
