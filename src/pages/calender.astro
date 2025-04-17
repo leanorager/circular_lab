@@ -2,6 +2,7 @@
 //@ts-nocheck
 import "../style/general.css";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 const url = "https://bfstkapstumrygwtnxkd.supabase.co/rest/v1/events?select=*";
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmc3RrYXBzdHVtcnlnd3RueGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTIsImV4cCI6MjA1OTg0MzcxMn0.pjxEEeNNrYNtuhqCWfpi8oPN-8tVl24ML_F52PyJk20";
@@ -20,8 +21,7 @@ console.log(data);
 ---
 
 <Layout>
-  <h1>Min side</h1>
-  <h4>Hej med dig h4</h4>
+  <h1>Events hos Circular Lab</h1>
   {
     data.map((event) => {
       const date = new Date(event.event_date);
@@ -39,4 +39,5 @@ console.log(data);
       );
     })
   }
+  <Footer />
 </Layout>
