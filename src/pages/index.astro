@@ -11,7 +11,8 @@ import Menu from "../components/Menu.astro";
   <Menu />
 
   <section class="hero">
-    <div class="grid_1_1">
+    <div class="grid_hero">
+      <div class="collage-pic"></div>
       <div>
         <div class="hero-titel">
           <h1>
@@ -30,85 +31,188 @@ import Menu from "../components/Menu.astro";
 
         <a href="#" class="cta">SE ALLE EVENTS</a>
       </div>
-      <div>
-        <img class="collage-pic" src="/hero_pics.png" alt="collage-billeder" />
-      </div>
     </div>
   </section>
-  <section class="Velkommen">
-    <div class="grid_1_1">
-      <div>
-        <img class="logo" src={logoFooter.src} alt="Logo" />
-      </div>
-    </div>
-  </section>
-  <Footer />
-
-  <style>
-    .hero {
-      background: var(--secondary-col);
-      color: white;
-      padding: 4rem 1rem;
-    }
-    @media (min-width: 850px) {
-      .white {
-        color: white;
-      }
-
-      .orange {
-        color: var(--brand-col);
-      }
-      .hero-titel h1 {
-        padding: 2rem;
-        font-size: 75px;
-        margin-left: 5rem;
-        margin-top: 2rem;
-      }
-
-      .under-titel {
-        color: white;
-        padding-left: 7rem;
-        padding-right: 6rem;
-        font-size: 43px;
-      }
-
-      .cta {
-        display: inline-block;
-        background-color: var(--secondary-col);
-        border: 2px solid var(--brand-col);
-        border-radius: 30px;
-        color: var(--brand-col);
-        text-transform: uppercase;
-        padding: 15px 27px;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 24px;
-        font-style: normal;
-        line-height: normal;
-        margin: 20px;
-        margin-left: 15rem;
-        margin-top: 2rem;
-        text-decoration: none;
-        transition:
-          background-color 0.3s,
-          color 0.3s;
-      }
-      .cta:hover {
-        background-color: var(--brand-col);
-        color: var(--white);
-      }
-      .grid_1_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .collage-pic {
-        background-image: url("/hero_pics.png") no-repeat center center;
-        width: 85%;
-        margin-left: 1rem;
-        margin-top: -2rem;
-        display: block;
-      }
-    }
-  </style>
 </Layout>
+<section class="velkommen">
+  <div class="grid_velkommen">
+    <div class="hvad-circular">
+      <img class="logo" src={logoFooter.src} alt="Logo" />
+      <p class="p-bigger">
+        Velkommen til Circular Lab på KEA - et kreativt samlingspunkt for
+        fremtidens cirkulære desginere.
+      </p>
+      <p>
+        Circular Lab er KEAs levende læringsrum og fælleskab for dig, der vil
+        designe med omtanke, skabe forbindelser og styrke dit bæredygtige
+        mindset.
+      </p>
+      <p>
+        Her får du adgang til praksisnær viden, inspirerende events og et
+        netværk af ligesindede, der - ligesom dig - drømmer om at forme en mere
+        ansvarlig og regenerativ fremtid.
+      </p>
+      <p>
+        Gennem workshoops, talks, caféer og samarbejder med virksomheder og
+        andre labs på KEA, åbner Circular Lab dørene til hands-on læring, faglig
+        udvikling og nye perspektiver på, hvad cirkulær omstilling kan betude i
+        designfeltet.
+      </p>
+      <p>
+        Uanset om du vil forbedre dit eksamensprpjekt, styrke dit CV eller bare
+        være en del af noget større - så er Circular Lab et sted, hvor idéer
+        spirer, viden deles og relationer skabes.
+      </p>
+    </div>
+    <div class="praktisk-info">
+      <h3>Praktisk Info</h3>
+      <h4>Åbningstider</h4>
+      <p>Circular Lab er åbent mandag til fredag kl. 8.30 - 22.00</p>
+      <p>
+        Du velkommen til at benytte lokalet i åbningstiden, så længe der ikke
+        foregår undervisning, workshops eller andet. Tjek vores <strong
+          >kalender</strong
+        > for at se kommende events.
+      </p>
+      <p>
+        Åbningstider for vejledning med Lab Manager: Se <strong>kalender</strong
+        >
+      </p>
+      <h4>Placering</h4>
+      <p>Labbet er placeret på Guldbergsgade 29N, Lokale A129.</p>
+      <h4>Kontakt</h4>
+      <p>Email til Circular Lab: <strong>circular@kea.dk</strong></p>
+      <p>
+        Email til Lab Manager, Nikolaj Strom Hauge Tost: <strong
+          >nito@kea.dk</strong
+        >
+      </p>
+    </div>
+  </div>
+</section>
+<Footer />
+
+<style>
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .hero {
+    background: var(--secondary-col);
+    padding: 4rem 1rem;
+    width: 100vw;
+  }
+  .grid_hero,
+  .grid_velkommen {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cta {
+    display: inline-block;
+    background-color: var(--secondary-col);
+    border: 2px solid var(--brand-col);
+    border-radius: 30px;
+    color: var(--brand-col);
+    text-transform: uppercase;
+    padding: 15px 27px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    margin: 20px;
+    margin-left: 15rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+  .cta:hover {
+    background-color: var(--brand-col);
+    color: var(--white);
+  }
+
+  .collage-pic {
+    background-image: url(/public/mobil-hero.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+    border-radius: 30px;
+    padding: 4rem;
+  }
+  .white {
+    color: white;
+  }
+
+  .orange {
+    color: var(--brand-col);
+  }
+  .velkommen {
+    background: var(--darker-grey);
+    padding: 4rem 1rem;
+  }
+  .velkommen p,
+  .velkommen h4 {
+    margin-top: 1.3rem;
+  }
+  .praktisk-info {
+    display: none;
+  }
+
+  @media (min-width: 850px) {
+    .hero-titel h1 {
+      padding: 2rem;
+      font-size: 75px;
+      margin-left: 5rem;
+      margin-top: 2rem;
+    }
+
+    .under-titel {
+      color: white;
+      padding-left: 7rem;
+      padding-right: 6rem;
+      font-size: 43px;
+    }
+
+    .grid_hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .grid_velkommen {
+      display: grid;
+      grid-template-columns: minmax(650px, 750px) minmax(400px, 500px);
+      gap: 90px;
+      place-self: center;
+    }
+
+    .collage-pic {
+      background-image: url(/public/hero_pics.png);
+      width: 85%;
+      margin-left: 1rem;
+      margin-top: -2rem;
+      display: block;
+    }
+    .praktisk-info {
+      display: block;
+      background-color: var(--secondary-col);
+      color: var(--white);
+      border-radius: 30px;
+      padding: 30px;
+      margin-top: 8rem;
+    }
+    .praktisk-info h4,
+    .praktisk-info p {
+      text-align: start;
+    }
+    .praktisk-info h3 {
+      color: var(--white);
+      place-self: center;
+    }
+    .hvad-circular {
+      padding: 1.1rem;
+    }
+  }
+</style>
