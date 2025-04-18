@@ -1,0 +1,60 @@
+---
+//@ts-nocheck
+import timeIcon from "../assets/clock-icon.svg";
+import locationIcon from "../assets/location-icon.svg";
+const url = "https://bfstkapstumrygwtnxkd.supabase.co/rest/v1/events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmc3RrYXBzdHVtcnlnd3RueGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTIsImV4cCI6MjA1OTg0MzcxMn0.pjxEEeNNrYNtuhqCWfpi8oPN-8tVl24ML_F52PyJk20";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => {
+  return res.json();
+});
+
+console.log(data);
+---
+
+{
+  data.map((event) => {
+    const date = new Date(event.event_date);
+    const formattedDate = date.toLocaleDateString("da-DK", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    return (
+      <a href="">
+        <article>
+          <div class="dato">
+            <p>{formattedDate}</p>
+          </div>
+          <img src={`/${event.event_img}`} alt="" />
+          <div class="info">
+            <h2>{event.event_title}</h2>
+            <div class="flex_tidspunkt">
+              <img src={timeIcon.src} alt="Ur-ikon" />
+              <p>{formattedDate}</p>
+            </div>
+            <div class="flex_lokation">
+              <img src={locationIcon.src} alt="Lokation-ikon" />
+              <p>{event.event_location}</p>
+            </div>
+            <p>{event.event_description_bold}</p>
+            <p>{event.event_description}</p>
+          </div>
+        </article>
+      </a>
+    );
+  })
+}
+
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
