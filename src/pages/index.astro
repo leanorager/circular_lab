@@ -3,9 +3,13 @@
 import "../style/general.css";
 import Layout from "../layouts/Layout.astro";
 import logoFooter from "../assets/logo-footer.svg";
+import Footer from "../components/Footer.astro";
+import Menu from "../components/Menu.astro";
 ---
 
 <Layout>
+  <Menu />
+
   <section class="hero">
     <div class="grid_1_1">
       <div>
@@ -38,6 +42,7 @@ import logoFooter from "../assets/logo-footer.svg";
       </div>
     </div>
   </section>
+  <Footer />
 
   <style>
     .hero {
@@ -45,62 +50,65 @@ import logoFooter from "../assets/logo-footer.svg";
       color: white;
       padding: 4rem 1rem;
     }
+    @media (min-width: 850px) {
+      .white {
+        color: white;
+      }
 
-    .white {
-      color: white;
-    }
+      .orange {
+        color: var(--brand-col);
+      }
+      .hero-titel h1 {
+        padding: 2rem;
+        font-size: 75px;
+        margin-left: 5rem;
+        margin-top: 2rem;
+      }
 
-    .orange {
-      color: var(--brand-col);
-    }
-    .hero-titel h1 {
-      padding: 2rem;
-      font-size: 75px;
-      margin-left: 5rem;
-      margin-top: 2rem;
-    }
+      .under-titel {
+        color: white;
+        padding-left: 7rem;
+        padding-right: 6rem;
+        font-size: 43px;
+      }
 
-    .under-titel {
-      color: white;
-      padding-left: 7rem;
-      padding-right: 6rem;
-      font-size: 43px;
-    }
+      .cta {
+        display: inline-block;
+        background-color: var(--secondary-col);
+        border: 2px solid var(--brand-col);
+        border-radius: 30px;
+        color: var(--brand-col);
+        text-transform: uppercase;
+        padding: 15px 27px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        line-height: normal;
+        margin: 20px;
+        margin-left: 15rem;
+        margin-top: 2rem;
+        text-decoration: none;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+      }
+      .cta:hover {
+        background-color: var(--brand-col);
+        color: var(--white);
+      }
+      .grid_1_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
 
-    .cta {
-      display: inline-block;
-      background-color: var(--secondary-col);
-      border: 2px solid var(--brand-col);
-      border-radius: 30px;
-      color: var(--brand-col);
-      text-transform: uppercase;
-      padding: 15px 27px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 24px;
-      font-style: normal;
-      line-height: normal;
-      margin: 20px;
-      margin-left: 15rem;
-      margin-top: 2rem;
-      text-decoration: none;
-      transition:
-        background-color 0.3s,
-        color 0.3s;
-    }
-    .cta:hover {
-      background-color: var(--brand-col);
-      color: var(--white);
-    }
-    .grid_1_1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .collage-pic {
-      width: 85%;
-      margin-left: 1rem;
-      margin-top: -2rem;
+      .collage-pic {
+        background-image: url("/hero_pics.png") no-repeat center center;
+        width: 85%;
+        margin-left: 1rem;
+        margin-top: -2rem;
+        display: block;
+      }
     }
   </style>
 </Layout>
