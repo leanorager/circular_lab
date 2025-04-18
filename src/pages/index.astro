@@ -1,4 +1,106 @@
 ---
 //@ts-nocheck
 import "../style/general.css";
+import Layout from "../layouts/Layout.astro";
+import logoFooter from "../assets/logo-footer.svg";
 ---
+
+<Layout>
+  <section class="hero">
+    <div class="grid_1_1">
+      <div>
+        <div class="hero-titel">
+          <h1>
+            <span class="white">SKAB</span>
+            <span class="orange">FREMTIDEN</span>
+
+            <span class="white">MED</span>
+            <span class="orange">FORTIDEN</span>
+          </h1>
+        </div>
+
+        <h4 class="under-titel">
+          <span class="white">-Skab forandring, byg dit netværk,</span>
+          <span class="white">og styrk dit CV med værdifuld erfaring.</span>
+        </h4>
+
+        <a href="#" class="cta">SE ALLE EVENTS</a>
+      </div>
+      <div>
+        <img class="collage-pic" src="/hero_pics.png" alt="collage-billeder" />
+      </div>
+    </div>
+  </section>
+  <section class="Velkommen">
+    <div class="grid_1_1">
+      <div>
+        <img class="logo" src={logoFooter.src} alt="Logo" />
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      background: var(--secondary-col);
+      color: white;
+      padding: 4rem 1rem;
+    }
+
+    .white {
+      color: white;
+    }
+
+    .orange {
+      color: var(--brand-col);
+    }
+    .hero-titel h1 {
+      padding: 2rem;
+      font-size: 75px;
+      margin-left: 5rem;
+      margin-top: 2rem;
+    }
+
+    .under-titel {
+      color: white;
+      padding-left: 7rem;
+      padding-right: 6rem;
+      font-size: 43px;
+    }
+
+    .cta {
+      display: inline-block;
+      background-color: var(--secondary-col);
+      border: 2px solid var(--brand-col);
+      border-radius: 30px;
+      color: var(--brand-col);
+      text-transform: uppercase;
+      padding: 15px 27px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      line-height: normal;
+      margin: 20px;
+      margin-left: 15rem;
+      margin-top: 2rem;
+      text-decoration: none;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+    }
+    .cta:hover {
+      background-color: var(--brand-col);
+      color: var(--white);
+    }
+    .grid_1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .collage-pic {
+      width: 85%;
+      margin-left: 1rem;
+      margin-top: -2rem;
+    }
+  </style>
+</Layout>
