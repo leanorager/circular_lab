@@ -1,0 +1,138 @@
+---
+import logoMenu from "../assets/logo-menu.svg";
+---
+
+<header>
+  <div class="logo">
+    <a href="../pages/index.astro">
+      <img src={logoMenu.src} alt="Logo" />
+    </a>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li>
+        <a href=""><h5>Om Circular Lab</h5></a>
+      </li>
+      <li>
+        <a href="../pages/calender.astro"><h5>Kalender</h5></a>
+      </li>
+      <li>
+        <a href=""><h5>Dine muligheder</h5></a>
+      </li>
+      <li>
+        <a href=""><h5>Praktisk info</h5></a>
+      </li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
+    align-items: center; /* vertikal centrering */
+    background-color: var(--secondary-col);
+  }
+  .logo img {
+    width: 200px; /* Fast bredde vigtigt*/
+    height: auto;
+    margin: 30px 40px;
+  }
+  .menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 60px; /* mellem menupunkterne */
+  }
+  .menu a {
+    text-decoration: none;
+  }
+  .menu h5 {
+    display: block;
+    color: var(--white);
+  }
+  .menu h5:hover {
+    color: var(--brand-col);
+  }
+  .burger {
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+  }
+  .burger .line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--bg-grey);
+    margin-bottom: 10px;
+    transition: 0.2s linear;
+  }
+  .burger .line:nth-child(3) {
+    margin-bottom: 0;
+  }
+  .burger {
+    display: none;
+  }
+  @media screen and (max-width: 1180px) {
+    header {
+      padding-right: 20px;
+    }
+    .menu {
+      display: none;
+    }
+    .logo img {
+      width: 150px; /* Fast bredde vigtigt*/
+      margin: 20px;
+    }
+    .burger {
+      display: block;
+      overflow: hidden;
+    }
+
+    /* burger-linjernes classes der kaldes i js */
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    } /* En linje drejer 45 grader, 5px til højre (X-aksen) og 5px nedad (Y-aksen)*/
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    } /* En linje bliver usynlig */
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    } /* En linje drejer 45 grader, 5px til højre (X-aksen) og 5px nedad (Y-aksen)*/
+
+    /* drop-down-menuens classes der kaldes i js*/
+    nav.active .menu {
+      display: block;
+      background-color: var(--secondary-col);
+      position: absolute;
+      top: 79px;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      padding: 35px 0 35px 0;
+    }
+    /* menupunkternes classes der kaldes i js*/
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+    nav.active .menu a {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<script type="module" src="/js/menu.js"></script>
