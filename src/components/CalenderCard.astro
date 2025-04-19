@@ -1,0 +1,169 @@
+---
+//@ts-nocheck
+import timeIcon from "../assets/clock-icon.svg";
+import locationIcon from "../assets/location-icon.svg";
+import Button from "../components/Button.astro";
+const url =
+  "https://bfstkapstumrygwtnxkd.supabase.co/rest/v1/events?select=*&order=event_date.asc";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmc3RrYXBzdHVtcnlnd3RueGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTIsImV4cCI6MjA1OTg0MzcxMn0.pjxEEeNNrYNtuhqCWfpi8oPN-8tVl24ML_F52PyJk20";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => {
+  return res.json();
+});
+
+console.log(data);
+---
+
+{
+  data.map((event) => {
+    const date = new Date(event.event_date);
+    const formattedDate = date.toLocaleDateString("da-DK", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+    // F.eks. "09"
+    const dayFormatted = String(date.getDate()).padStart(2, "0");
+
+    // F.eks. "APR" (engelsk forkortet måned i uppercase)
+    const monthFormatted = date
+      .toLocaleDateString("en-GB", {
+        month: "short",
+      })
+      .toUpperCase();
+    return (
+      <a href="">
+        <article>
+          <div class="mobile_flex">
+            <div class="dato">
+              <p class="dato-dag">{dayFormatted}</p>
+              <p class="dato-month">{monthFormatted}</p>
+            </div>
+            <img src={`/${event.event_img}`} alt="" />
+          </div>
+          <div class="info">
+            <h3>{event.event_title}</h3>
+            <div class="flex_tidspunkt">
+              <img src={timeIcon.src} alt="Ur-ikon" />
+              <p class="smaller">{formattedDate}</p>
+            </div>
+            <div class="flex_lokation">
+              <img src={locationIcon.src} alt="Lokation-ikon" />
+              <p class="smaller">{event.event_location}</p>
+            </div>
+            <p class="bold smaller">{event.event_description_bold}</p>
+            <p class="smaller">{event.event_description}</p>
+            <Button href={`/events/${event.id}`} label="LÆS MERE" />
+          </div>
+        </article>
+      </a>
+    );
+  })
+}
+
+<style>
+  a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  .mobile_flex {
+    display: flex;
+    gap: 5px;
+    background-color: var(--secondary-col);
+    color: var(--brand-col);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .mobile_flex img {
+    border-radius: 10px;
+  }
+  .dato {
+    color: var(--brand-col);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+  .dato-month {
+    font-size: 30px;
+    font-family: "helveticaneueltstd_blk";
+  }
+  .dato-dag {
+    font-size: 50px;
+    font-family: "helveticaneueltstd_blk";
+  }
+
+  .flex_tidspunkt,
+  .flex_lokation {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .flex_tidspunkt img {
+    width: 20px;
+    height: 20px;
+  }
+  .flex_lokation img {
+    height: 26px;
+    width: auto;
+  }
+  .bold {
+    font-weight: bolder;
+    margin-bottom: 7px;
+  }
+  .info {
+    margin: 15px 0 50px 0;
+  }
+  .flex_lokation {
+    margin-bottom: 15px;
+  }
+  @media (min-width: 1110px) {
+    article {
+      display: flex;
+      gap: 50px;
+      margin: 50px auto 100px;
+      overflow: hidden;
+      align-items: stretch;
+      max-width: 1350px;
+
+    }
+    .mobile_flex {
+        background-color: var(--bg-grey);
+    border-radius: 10px;
+    flex-shrink: 0;
+    border-radius: 0px;
+    align-items: stretch;
+  }
+  .mobile_flex img {
+    width: 330px; 
+    height: 330px;
+    border-radius: 0;
+    display: block;
+  }
+  .info {
+    flex: 1;
+    margin: 0;
+  }
+  .smaller {
+    font-size: 20px;
+  }
+  .dato-month {
+    font-size: 58px;
+  }
+  .dato-dag {
+    font-size: 100px;
+  }
+  .dato{
+    justify-content: flex-start;
+    padding: 0 10px 0 0;
+  }
+</style>

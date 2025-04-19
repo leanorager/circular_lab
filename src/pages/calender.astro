@@ -2,42 +2,27 @@
 //@ts-nocheck
 import "../style/general.css";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-const url = "https://bfstkapstumrygwtnxkd.supabase.co/rest/v1/events?select=*";
-const key =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmc3RrYXBzdHVtcnlnd3RueGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTIsImV4cCI6MjA1OTg0MzcxMn0.pjxEEeNNrYNtuhqCWfpi8oPN-8tVl24ML_F52PyJk20";
 
-const options = {
-  headers: {
-    apikey: key,
-  },
-};
-
-const data = await fetch(url, options).then((res) => {
-  return res.json();
-});
-
-console.log(data);
+import CalenderCard from "../components/CalenderCard.astro";
 ---
 
 <Layout>
   <h1>Events hos Circular Lab</h1>
-  {
-    data.map((event) => {
-      const date = new Date(event.event_date);
-      const formattedDate = date.toLocaleDateString("da-DK", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-      return (
-        <article>
-          <h2>{event.event_title}</h2>
-          <p>{event.event_description}</p>
-          <p>Dato: {formattedDate}</p>
-        </article>
-      );
-    })
-  }
-  <Footer />
+  <CalenderCard />
 </Layout>
+
+<style>
+  body {
+    background-color: var(--bg-grey);
+  }
+  h1 {
+    margin: 30px 0 10px 0;
+  }
+
+  @media (min-width: 1110px) {
+    h1 {
+      text-align: center;
+      margin: 80px 0 50px 0;
+    }
+  }
+</style>

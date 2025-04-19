@@ -1,0 +1,28 @@
+---
+const { href, label } = Astro.props;
+---
+
+<a href={href} class="my-button">{label}</a>
+
+<style>
+  .my-button {
+    border: solid var(--brand-col) 2px;
+    color: var(--brand-col);
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family:
+      Helvetica Neue,
+      sans-serif;
+    display: block; /* <-- vigtig */
+    width: 100%; /* <-- fylder hele kolonnen */
+    text-align: center; /* centrer tekst inde i knappen */
+    box-sizing: border-box; /* så padding regnes korrekt med */
+    margin-top: 15px;
+
+    @media (min-width: 1110px) {
+      font-size: 28px;
+    }
+  }
+</style>
