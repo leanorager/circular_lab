@@ -87,14 +87,91 @@ import Menu from "../components/Menu.astro";
         </p>
       </div>
     </div>
-  </section>
-</Layout>
+
+  </div>
+</section>
+<section class="events-section">
+  <div>
+    <h2>Udforsk kommende events i Circular Lab</h2>
+    <img src="/public/event1.png" alt="event1" />
+    <p>
+      Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
+      Circular Lab. Workshops, foredrag, events og lignende vil løbende blive
+      lagt ind i kalenderen. Se <strong>alle events.</strong>
+    </p>
+    <ul class="event-list">
+      <li class="repair">
+        <a href="#">
+          <h4>
+            Repair Café - Giv dit tøj nyt liv <img
+              src="/public/arrow.png"
+              alt="Arrow"
+              class="arrow-icon"
+            />
+          </h4>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <h4>
+            Torsdagsbar – Mød dine med-designere
+            <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+          </h4>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <h4>
+            Foredrag - Meet the makers
+            <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+          </h4>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <h4>
+            Workshop – Design et cirkulært koncept <img
+              src="/public/arrow.png"
+              alt="Arrow"
+              class="arrow-icon"
+            />
+          </h4>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <h4>
+            Eksperimentel workshop - Byg med Affald <img
+              src="/public/arrow.png"
+              alt="Arrow"
+              class="arrow-icon"
+            />
+          </h4>
+        </a>
+      </li>
+    </ul>
+    <a href="#" class="cta-hvid">SE ALLE EVENTS</a>
+  </div>
+</section>
+
+<Footer />
 
 <style>
   html,
   body {
     overflow-x: hidden;
   }
+  .hero-titel,
+  .under-titel {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 50;
+  }
+  .hero-titel h1 {
+    font-size: 40px;
+  }
+
   .hero {
     background: var(--secondary-col);
     padding: 4rem 1rem;
@@ -118,9 +195,9 @@ import Menu from "../components/Menu.astro";
     font-size: 24px;
     font-style: normal;
     line-height: normal;
-    margin: 20px;
-    margin-left: 15rem;
-    margin-top: 2rem;
+    margin-left: 5rem;
+    margin-top: 3rem;
+    margin-bottom: -1rem;
     text-decoration: none;
     transition:
       background-color 0.3s,
@@ -130,13 +207,37 @@ import Menu from "../components/Menu.astro";
     background-color: var(--brand-col);
     color: var(--white);
   }
-
+  .cta-hvid {
+    display: inline-block;
+    background-color: var(--white);
+    border: 2px solid var(--brand-col);
+    border-radius: 30px;
+    color: var(--brand-col);
+    text-transform: uppercase;
+    padding: 15px 27px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    margin-left: 5.6rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+  .cta-hvid:hover {
+    background-color: var(--brand-col);
+    color: var(--white);
+  }
   .collage-pic {
     background-image: url(/public/mobil-hero.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 97%;
     height: 600px;
     border-radius: 30px;
     padding: 4rem;
@@ -159,6 +260,48 @@ import Menu from "../components/Menu.astro";
   .praktisk-info {
     display: none;
   }
+  .events-section h2 {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 40px;
+  }
+  .events-section p {
+    margin-top: 1rem;
+    padding: 2rem;
+  }
+
+  .event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid black; /* top line */
+    border-bottom: 1px solid black; /* bottom line */
+  }
+
+  .event-list li {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .event-list a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: black;
+  }
+  .event-list a:hover h4 {
+    color: var(--brand-col);
+  }
+
+  .event-list h4 {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .event-list img {
+    width: 10%;
+  }
 
   @media (min-width: 850px) {
     .hero-titel h1 {
@@ -178,6 +321,7 @@ import Menu from "../components/Menu.astro";
     .grid_hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
     .grid_velkommen {
       display: grid;
@@ -192,6 +336,19 @@ import Menu from "../components/Menu.astro";
       margin-left: 1rem;
       margin-top: -2rem;
       display: block;
+    }
+    .collage-pic {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .cta {
+      margin: 20px;
+      margin-left: 15rem;
+      margin-top: 2rem;
+    }
+    .cta:hover {
+      background-color: var(--brand-col);
+      color: var(--white);
     }
     .praktisk-info {
       display: block;
