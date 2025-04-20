@@ -9,25 +9,27 @@ import Menu from "../components/Menu.astro";
 
 <Layout>
   <section class="hero">
-    <div class="grid_hero">
-      <div class="collage-pic"></div>
-      <div>
-        <div class="hero-titel">
-          <h1>
-            <span class="white">SKAB</span>
-            <span class="orange">FREMTIDEN</span>
+    <div class="container">
+      <div class="grid_hero">
+        <div class="collage-pic"></div>
+        <div>
+          <div class="hero-titel">
+            <h1>
+              <span class="white">SKAB</span>
+              <span class="orange">FREMTIDEN</span>
 
-            <span class="white">MED</span>
-            <span class="orange">FORTIDEN</span>
-          </h1>
+              <span class="white">MED</span>
+              <span class="orange">FORTIDEN</span>
+            </h1>
+          </div>
+
+          <h4 class="under-titel">
+            <span class="white">-Skab forandring, byg dit netværk,</span>
+            <span class="white">og styrk dit CV med værdifuld erfaring.</span>
+          </h4>
+
+          <a href="#" class="cta">SE ALLE EVENTS</a>
         </div>
-
-        <h4 class="under-titel">
-          <span class="white">-Skab forandring, byg dit netværk,</span>
-          <span class="white">og styrk dit CV med værdifuld erfaring.</span>
-        </h4>
-
-        <a href="#" class="cta">SE ALLE EVENTS</a>
       </div>
     </div>
   </section>
@@ -87,79 +89,185 @@ import Menu from "../components/Menu.astro";
         </p>
       </div>
     </div>
+  </section>
+  <section class="events-section">
+    <div>
+      <h2>Udforsk kommende events i Circular Lab</h2>
+      <img src="/public/event1.png" alt="event1" />
+      <p>
+        Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
+        Circular Lab. Workshops, foredrag, events og lignende vil løbende blive
+        lagt ind i kalenderen. Se <strong>alle events.</strong>
+      </p>
+      <ul class="event-list">
+        <li class="repair">
+          <a href="#">
+            <h4>
+              Repair Café - Giv dit tøj nyt liv <img
+                src="/public/arrow.png"
+                alt="Arrow"
+                class="arrow-icon"
+              />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Torsdagsbar – Mød dine med-designere
+              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Foredrag - Meet the makers
+              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Workshop – Design et cirkulært koncept <img
+                src="/public/arrow.png"
+                alt="Arrow"
+                class="arrow-icon"
+              />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Eksperimentel workshop - Byg med Affald <img
+                src="/public/arrow.png"
+                alt="Arrow"
+                class="arrow-icon"
+              />
+            </h4>
+          </a>
+        </li>
+      </ul>
+      <a href="#" class="cta-hvid">SE ALLE EVENTS</a>
+    </div>
+  </section>
+  <section class="steps">
+    <img class="image-steps" src="/img2.png" alt="steps" />
+    <h2>
+      <span class="orange">6 MÅDER</span>
+      <span class="white">DU KAN</span>
 
-  </div>
-</section>
-<section class="events-section">
-  <div>
-    <h2>Udforsk kommende events i Circular Lab</h2>
-    <img src="/public/event1.png" alt="event1" />
-    <p>
-      Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
-      Circular Lab. Workshops, foredrag, events og lignende vil løbende blive
-      lagt ind i kalenderen. Se <strong>alle events.</strong>
-    </p>
-    <ul class="event-list">
-      <li class="repair">
-        <a href="#">
-          <h4>
-            Repair Café - Giv dit tøj nyt liv <img
-              src="/public/arrow.png"
-              alt="Arrow"
-              class="arrow-icon"
-            />
-          </h4>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h4>
-            Torsdagsbar – Mød dine med-designere
-            <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
-          </h4>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h4>
-            Foredrag - Meet the makers
-            <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
-          </h4>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h4>
-            Workshop – Design et cirkulært koncept <img
-              src="/public/arrow.png"
-              alt="Arrow"
-              class="arrow-icon"
-            />
-          </h4>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h4>
-            Eksperimentel workshop - Byg med Affald <img
-              src="/public/arrow.png"
-              alt="Arrow"
-              class="arrow-icon"
-            />
-          </h4>
-        </a>
-      </li>
-    </ul>
-    <a href="#" class="cta-hvid">SE ALLE EVENTS</a>
-  </div>
-</section>
-
-<Footer />
+      <span class="orange">STYRKE</span>
+      <span class="white">DIN PROFIL</span>
+    </h2>
+    <div class="feature-card">
+      <h1>#01</h1>
+      <h3>Cirkulær vejledning</h3>
+      <p>Er du i gang med et projekt, hvor cirkularitet spiller en rolle?</p>
+      <p>
+        Mangler du sparring til materialvalg, desginstrategi eller
+        forretningsmodeller?
+      </p>
+      <p>
+        Hos Circular Lab tilbyder vi 1:1 vejledning og ideudvikling - båder til
+        studerende og undervisere.Du kan få sparring på alt fra reparation og
+        produktdesign til strategisk planlægging af en cirkulær løsning
+      </p>
+      <p class="space">
+        Kom forbi i de bemandede åbningstider (se kalenderen) eller book
+        vejledning med lab manager Nikolaj Storm på circular@kea.dk.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h1>#02</h1>
+      <h3>Cirkulær iværksætteri</h3>
+      <p>Er du iværksætter eller en del af KEAs Startup Hub?</p>
+      <p>
+        Få hjælp til at planlægge din virksomheds cirkulære transition i tråd
+        med ny lovgivning og fremtidens behov.
+      </p>
+      <p class="space">
+        Vi tilbyder coaching og analyseværktøjer, der hjælper dig med at omsætte
+        cirkulære principper til konkrete forretningsmuligheder - uanset om du
+        er i idéfasen eller allerede er i gang.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h1>#03</h1>
+      <h3>Cirkulære workshops</h3>
+      <p>
+        Er du underviser og har brug for et cirkulært indspark i et forløb eller
+        crash course for dine studerende uanset programområde? Er I en gruppe
+        studerende, der ønsker at øge jeres kendskab til cirkularitet og
+        cirkulære forretningsmodeller? Så har vi mulighederne til jer.
+      </p>
+      <p class="space">
+        Circular Lab har forskellige workshops baseret på materiale fra
+        Regndans, Ellen McArthur Foundation og Dansk Desing Center. Vi kan
+        facilitere workshops inden for mange forskellige områder tilknyttet
+        cirkularitet og vi kan skræddersy workshops og foredrag spesielt til
+        jeres undervisning/programområde - så bpde studerende og undervisere
+        bliver klædt godt på til en cirkulær fremtid.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h1>#04</h1>
+      <h3>Adgang til nyeste forskning</h3>
+      <p>
+        Circular Lab følger udviklingen i feltet tæt. Vi holder os opdateret på
+        den nyeste viden og brancherapporter - og vi formidler det videre til
+        dig.
+      </p>
+      <p class="space">
+        Du kan finde konkrete eksempler, studie og inspiration, der giver dig og
+        dit projekt tyngde og aktualitet.
+      </p>
+      <p>
+        Kom fori labbet, hvis du mangler forskning inden for dit fagområde - vi
+        guider dig videre.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h1>#05</h1>
+      <h3>Cirkulære foredrag</h3>
+      <p>
+        Bliv inpireret af de nyeste tendenser og stemmer fra den cirkulære
+        omstilling.
+      </p>
+      <p class="space">
+        Vi inviterer gæster fra desing-, tech- og erhvervsliv, som deler
+        erfaringer og konkrete cases.
+      </p>
+      <p class="space">
+        Vores foredrag samler studerende, undervisere og professionelle - og
+        åbner for dialog og nettværk på tværs. Bliv inspireret på tværs af
+        brancher - sådan kan vi få nye idéer og skabe nye sammenhænge til flere
+        cirkulære modeller.Se <strong>kalenderen</strong> for næste event.
+      </p>
+    </div>
+    <div class="feature-card">
+      <h1>#06</h1>
+      <h3>Cirkulære skills</h3>
+      <p>
+        Vil du lære at reparere, redesigne eller opgradere produkter med
+        cirkularitet for øje?
+      </p>
+      <p class="space">
+        Vi holder løbende praktiske workshops, hvor du får nye færdigheder - og
+        mulighed for at bruge dem direkte i dine projekter og
+        eksamensopgaver.Alle er velkomme, uanset niveau eller program. Tjek <strong
+          >kalenderen</strong
+        > for at finde det næste event.
+      </p>
+    </div>
+  </section>
+</Layout>
 
 <style>
-  html,
-  body {
-    overflow-x: hidden;
+  :global(.main-wrapper) {
+    padding: 0 !important;
   }
   .hero-titel,
   .under-titel {
@@ -175,7 +283,6 @@ import Menu from "../components/Menu.astro";
   .hero {
     background: var(--secondary-col);
     padding: 4rem 1rem;
-    width: 100vw;
   }
   .grid_hero,
   .grid_velkommen {
@@ -301,6 +408,41 @@ import Menu from "../components/Menu.astro";
   }
   .event-list img {
     width: 10%;
+  }
+  .steps {
+    background-color: var(--secondary-col);
+    padding: 4rem 1rem;
+  }
+  .steps h2 {
+    display: inline-block;
+    padding-left: 1.8rem;
+    margin-bottom: 2rem;
+    font-size: 38px;
+  }
+  .steps h1 {
+    place-self: end;
+    color: var(--brand-col);
+    margin-bottom: 1rem;
+  }
+  .steps h3 {
+    margin-bottom: 1rem;
+  }
+  .space {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .image-steps {
+    border-radius: 30px;
+    margin-bottom: 1rem;
+  }
+  .feature-card {
+    background-color: var(--bg-grey);
+    border-radius: 20px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 85vw;
+    place-self: center;
   }
 
   @media (min-width: 850px) {
