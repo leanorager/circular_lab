@@ -9,27 +9,25 @@ import Menu from "../components/Menu.astro";
 
 <Layout>
   <section class="hero">
-    <div class="container">
-      <div class="grid_hero">
-        <div class="collage-pic"></div>
-        <div>
-          <div class="hero-titel">
-            <h1>
-              <span class="white">SKAB</span>
-              <span class="orange">FREMTIDEN</span>
+    <div class="grid_hero">
+      <div class="collage-pic"></div>
+      <div>
+        <div class="hero-titel">
+          <h1>
+            <span class="white">SKAB</span>
+            <span class="orange">FREMTIDEN</span>
 
-              <span class="white">MED</span>
-              <span class="orange">FORTIDEN</span>
-            </h1>
-          </div>
-
-          <h4 class="under-titel">
-            <span class="white">-Skab forandring, byg dit netværk,</span>
-            <span class="white">og styrk dit CV med værdifuld erfaring.</span>
-          </h4>
-
-          <a href="#" class="cta">SE ALLE EVENTS</a>
+            <span class="white">MED</span>
+            <span class="orange">FORTIDEN</span>
+          </h1>
         </div>
+
+        <h4 class="under-titel">
+          <span class="white">-Skab forandring, byg dit netværk,</span>
+          <span class="white">og styrk dit CV med værdifuld erfaring.</span>
+        </h4>
+
+        <a href="#" class="cta">SE ALLE EVENTS</a>
       </div>
     </div>
   </section>
@@ -91,7 +89,7 @@ import Menu from "../components/Menu.astro";
     </div>
   </section>
   <section class="events-section">
-    <div>
+    <div class="event-img">
       <h2>Udforsk kommende events i Circular Lab</h2>
       <img src="/public/event1.png" alt="event1" />
       <p>
@@ -263,6 +261,69 @@ import Menu from "../components/Menu.astro";
       </p>
     </div>
   </section>
+  <section class="info">
+    <div class="event-img">
+      <img class="map" src="/circular-lab-oversigt.png" alt="circular-map" />
+      <ul class="event-list">
+        <li>
+          <a href="#">
+            <h4>
+              Åbningstider
+              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Placering <img
+                src="/public/arrow.png"
+                alt="Arrow"
+                class="arrow-icon"
+              />
+            </h4>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h4>
+              Kontakt<img
+                src="/public/arrow.png"
+                alt="Arrow"
+                class="arrow-icon"
+              />
+            </h4>
+          </a>
+        </li>
+      </ul>
+      <div class="p-info">
+        <h2>Praktisk Information</h2>
+        <p class="space">
+          Circular Lab er åbent 8.30-22.00 hver dag. Du er velkommen til at
+          benytte lokalet til gruppearbejde eller andet. Tjek <strong
+            >kalenderen</strong
+          > for at se, om der er planlagt undervisning i lokalet.
+        </p>
+        <p class="space">
+          Der er adgang til Material Connexion igennem labbet, hvis du gerne vil
+          låne præverne med i undervisning eller andet - så skriv venligst til <strong
+            >circular@kea.dk</strong
+          >
+        </p>
+        <p class="space">
+          Der vil løbende være udstillinger og cirkulære projekter på display i
+          labbet. Har du yderligere spørgsmål til disse, kan du også række ud
+          til lab manager Nikolaj Storm.
+        </p>
+        <p class="space">
+          Vi arbejder lige nu at oprette KEAs Cirkulære Materiale bibliotek med
+          gode samarbejdspartnere. Materialerne er på udstilling i labbet. Har
+          du spørgsmål til materialerne, indkøb eller virksomhederne, så tag
+          også få fat i lab manager Nikolaj Storm for mere information.
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -282,7 +343,8 @@ import Menu from "../components/Menu.astro";
 
   .hero {
     background: var(--secondary-col);
-    padding: 4rem 1rem;
+    padding: 1rem;
+    padding-bottom: 4rem;
   }
   .grid_hero,
   .grid_velkommen {
@@ -347,7 +409,7 @@ import Menu from "../components/Menu.astro";
     width: 97%;
     height: 600px;
     border-radius: 30px;
-    padding: 4rem;
+    place-self: center;
   }
   .white {
     color: white;
@@ -409,6 +471,9 @@ import Menu from "../components/Menu.astro";
   .event-list img {
     width: 10%;
   }
+  .event-img {
+    padding: 2rem;
+  }
   .steps {
     background-color: var(--secondary-col);
     padding: 4rem 1rem;
@@ -443,6 +508,13 @@ import Menu from "../components/Menu.astro";
     margin-bottom: 2rem;
     width: 85vw;
     place-self: center;
+  }
+  .map {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .p-info {
+    margin-top: 3rem;
   }
 
   @media (min-width: 850px) {
