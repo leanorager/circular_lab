@@ -31,7 +31,7 @@ import Menu from "../components/Menu.astro";
       </div>
     </div>
   </section>
-  <section class="velkommen">
+  <section class="velkommen" id="om">
     <div class="grid_velkommen">
       <div class="hvad-circular">
         <img class="logo" src={logoFooter.src} alt="Logo" />
@@ -91,7 +91,7 @@ import Menu from "../components/Menu.astro";
   <section class="events-section">
     <div class="event-img">
       <h2>Udforsk kommende events i Circular Lab</h2>
-      <div class="event-pic"></div>
+      <img class="event-pic" src="/public/event2.png" alt="event-billede" />
       <p>
         Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
         Circular Lab. Workshops, foredrag, events og lignende vil løbende blive
@@ -151,7 +151,7 @@ import Menu from "../components/Menu.astro";
       <a href="#" class="cta-hvid">SE ALLE EVENTS</a>
     </div>
   </section>
-  <section class="steps">
+  <section class="steps" id="steps">
     <div class="col1">
       <div class="steps-pic"></div>
       <h2>
@@ -265,7 +265,7 @@ import Menu from "../components/Menu.astro";
       </div>
     </div>
   </section>
-  <section class="info">
+  <section class="info" id="info">
     <div class="info-container">
       <img class="map" src="/circular-lab-oversigt.png" alt="circular-map" />
       <ul class="event-list">
@@ -439,8 +439,8 @@ import Menu from "../components/Menu.astro";
     font-size: 40px;
   }
   .events-section p {
-    margin-top: 1rem;
-    padding: 2rem;
+    margin-top: 0.5rem;
+    padding: 1rem;
   }
 
   .event-list {
@@ -477,14 +477,6 @@ import Menu from "../components/Menu.astro";
   }
   .event-img {
     padding: 2rem;
-  }
-  .event-pic {
-    background-image: url(/event1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 500px; /* or whatever you want */
   }
   .steps {
     background-color: var(--secondary-col);
@@ -539,17 +531,18 @@ import Menu from "../components/Menu.astro";
   }
   @media (min-width: 800px) {
     .hero-titel h1 {
-      padding: 2rem;
+      padding: 1rem;
       font-size: 75px;
-      margin-left: 5rem;
+      margin-left: 6rem;
       margin-top: 2rem;
     }
 
     .under-titel {
       color: white;
       padding-left: 7rem;
-      padding-right: 6rem;
+      padding-right: 5rem;
       font-size: 43px;
+      margin-left: 1rem;
     }
 
     .grid_hero {
@@ -571,7 +564,7 @@ import Menu from "../components/Menu.astro";
       background-image: url(/public/hero_pics.png);
       background-repeat: no-repeat;
       background-position: center;
-      margin-top: -1rem;
+      max-width: 85%;
       display: block;
     }
     .collage-pic {
@@ -580,7 +573,7 @@ import Menu from "../components/Menu.astro";
     }
     .cta {
       margin: 20px;
-      margin-left: 15rem;
+      margin-left: 18rem;
       margin-top: 2rem;
     }
     .cta:hover {
@@ -624,7 +617,7 @@ import Menu from "../components/Menu.astro";
     .event-img p {
       grid-column: 1;
       grid-row: 2;
-      padding-top: 0;
+      padding-top: 1rem;
     }
 
     .event-list {
@@ -634,11 +627,6 @@ import Menu from "../components/Menu.astro";
     }
 
     .event-pic {
-      background-image: url(/public/event2.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      height: 830px;
       grid-column: 2;
       grid-row: 1 / span 3;
       margin-top: 4rem;
