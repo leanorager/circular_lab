@@ -1,0 +1,111 @@
+---
+//@ts-nocheck
+import Layout from "../../layouts/Layout.astro";
+import "../../style/general.css";
+
+export async function getStaticPaths() {
+  const url = "https://bfstkapstumrygwtnxkd.supabase.co/rest/v1/events";
+  const key =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJmc3RrYXBzdHVtcnlnd3RueGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjc3MTIsImV4cCI6MjA1OTg0MzcxMn0.pjxEEeNNrYNtuhqCWfpi8oPN-8tVl24ML_F52PyJk20";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return data.map((event) => {
+    return {
+      params: { slug: event.event_slug },
+      props: { event },
+    };
+  });
+}
+
+const { event } = Astro.props;
+const formatTimeOnly = (timeStr) => {
+  const [hours, minutes] = timeStr.split(":");
+  return `${hours}.${minutes}`;
+};
+const formatDate = (dateStr) => {
+  const [year, month, day] = dateStr.split("-");
+  const shortYear = year.slice(2);
+  return `${day}/${month}/${shortYear}`;
+};
+
+console.log(event.event_img);
+---
+
+<Layout>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <img src={event.event_img} alt="event billede" />
+        <div class="event-info">
+          <!-- <p class="dato">{event.event_date}</p> -->
+          <!-- <p class="tidspunkt">{event.event_start}-{event.event_end}</p> -->
+          <p class="dato">{formatDate(event.event_date)}</p>
+          <p class="tidspunkt">
+            {formatTimeOnly(event.event_start)} - {
+              formatTimeOnly(event.event_end)
+            }
+          </p>
+        </div>
+        <div>
+          <h2>Nikolaj Storm/Underviser</h2>
+          <p>
+            Circular Lab Manager på KEA. Han har 10 års erfaring fra
+            modebranchen, hvor han har hjulpet forskellige brands med grøn
+            omstilling, og er indehaver af sit eget brand, der gør brug af
+            cirkularitet.
+          </p>
+        </div>
+      </div>
+      <article>
+        <h1>: {event.event_title}</h1>
+        <p>{event.event_description}</p>
+        <p>{event.event_type}</p>
+      </article>
+    </main>
+    <footer></footer>
+  </body>
+  <style>
+    img {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .dato {
+      grid-column: 1;
+      grid-row: 1;
+      place-self: start end;
+      background-color: var(--brand-col);
+      width: 180px;
+      text-align: center;
+      padding: 2px;
+    }
+
+    .tidspunkt {
+      grid-column: 1;
+      grid-row: 1;
+      place-self: start end;
+      margin-top: 60px;
+      background-color: var(--brand-col);
+      width: 180px;
+      text-align: center;
+      padding: 2px;
+    }
+
+    .event-info {
+      display: grid;
+      width: 100%;
+    }
+  </style>
+</Layout>
