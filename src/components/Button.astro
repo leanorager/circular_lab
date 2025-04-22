@@ -20,9 +20,15 @@ const { href, label } = Astro.props;
     text-align: center; /* centrer tekst inde i knappen */
     box-sizing: border-box; /* så padding regnes korrekt med */
     margin-top: 15px;
+    transition: all 0.3s ease-in-out;
 
     @media (min-width: 1110px) {
       font-size: 28px;
     }
+  }
+  .my-button:hover {
+    background-color: var(--brand-col);
+    color: var(--white); /* or any other contrast color */
+    cursor: pointer;
   }
 </style>
