@@ -27,7 +27,7 @@ import Menu from "../components/Menu.astro";
           <span class="white">og styrk dit CV med værdifuld erfaring.</span>
         </h4>
 
-        <a href="#" class="cta">SE ALLE EVENTS</a>
+        <a href="/calender" class="cta">SE ALLE EVENTS</a>
       </div>
     </div>
   </section>
@@ -91,7 +91,7 @@ import Menu from "../components/Menu.astro";
   <section class="events-section">
     <div class="event-img">
       <h2>Udforsk kommende events i Circular Lab</h2>
-      <img class="event-pic" src="/public/event2.png" alt="event-billede" />
+      <img class="event-pic" src="/event2.png" alt="event-billede" />
       <p>
         Følg med her i kalenderen og hold dig opdateret på, hvad der sker i
         Circular Lab. Workshops, foredrag, events og lignende vil løbende blive
@@ -102,7 +102,7 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Repair Café - Giv dit tøj nyt liv <img
-                src="/public/arrow.png"
+                src="/arrow.png"
                 alt="Arrow"
                 class="arrow-icon"
               />
@@ -113,7 +113,7 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Torsdagsbar – Mød dine med-designere
-              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+              <img src="/arrow.png" alt="Arrow" class="arrow-icon" />
             </h4>
           </a>
         </li>
@@ -121,7 +121,7 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Foredrag - Meet the makers
-              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+              <img src="/arrow.png" alt="Arrow" class="arrow-icon" />
             </h4>
           </a>
         </li>
@@ -129,7 +129,7 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Workshop – Design et cirkulært koncept <img
-                src="/public/arrow.png"
+                src="/arrow.png"
                 alt="Arrow"
                 class="arrow-icon"
               />
@@ -140,7 +140,7 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Eksperimentel workshop - Byg med Affald <img
-                src="/public/arrow.png"
+                src="/arrow.png"
                 alt="Arrow"
                 class="arrow-icon"
               />
@@ -148,14 +148,14 @@ import Menu from "../components/Menu.astro";
           </a>
         </li>
       </ul>
-      <a href="#" class="cta-hvid">SE ALLE EVENTS</a>
+      <a href="/calender" class="cta-hvid">SE ALLE EVENTS</a>
     </div>
   </section>
   <section class="steps" id="steps">
     <div class="col1">
       <img
         class="steps-pic"
-        src="/public/event_img/4R6A2442-kopi\ 1_resultat.webp"
+        src="/event_img/4R6A2442-kopi\ 1_resultat.webp"
         alt=""
       />
       <h2>
@@ -277,29 +277,21 @@ import Menu from "../components/Menu.astro";
           <a href="#">
             <h4>
               Åbningstider
-              <img src="/public/arrow.png" alt="Arrow" class="arrow-icon" />
+              <img src="/arrow.png" alt="Arrow" class="arrow-icon" />
             </h4>
           </a>
         </li>
         <li>
           <a href="#">
             <h4>
-              Placering <img
-                src="/public/arrow.png"
-                alt="Arrow"
-                class="arrow-icon"
-              />
+              Placering <img src="/arrow.png" alt="Arrow" class="arrow-icon" />
             </h4>
           </a>
         </li>
         <li>
           <a href="#">
             <h4>
-              Kontakt<img
-                src="/public/arrow.png"
-                alt="Arrow"
-                class="arrow-icon"
-              />
+              Kontakt<img src="/arrow.png" alt="Arrow" class="arrow-icon" />
             </h4>
           </a>
         </li>
@@ -410,7 +402,7 @@ import Menu from "../components/Menu.astro";
     color: var(--white);
   }
   .collage-pic {
-    background-image: url(/public/mobil-hero.png);
+    background-image: url(/mobil-hero.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -553,7 +545,7 @@ import Menu from "../components/Menu.astro";
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 90px;
-      margin-left: 3rem;
+      margin-left: 4rem;
     }
     .velkommen {
       padding-left: 9rem;
@@ -561,7 +553,7 @@ import Menu from "../components/Menu.astro";
     }
 
     .collage-pic {
-      background-image: url(/public/hero_pics.png);
+      background-image: url(/hero_pics.png);
       background-repeat: no-repeat;
       background-position: center;
       max-width: 85%;
@@ -628,8 +620,8 @@ import Menu from "../components/Menu.astro";
 
     .event-pic {
       grid-column: 2;
-      grid-row: 1 / span 3;
-      margin-top: 4rem;
+      grid-row: 2 / span 3;
+      margin-top: 2rem;
     }
     .cta-hvid {
       grid-column: 1;
@@ -641,7 +633,6 @@ import Menu from "../components/Menu.astro";
       padding-left: 7rem;
     }
     .steps-pic {
-      background-image: url(/public/event_img/4R6A2442-kopi\ 1_resultat.webp);
       height: 900px;
     }
     .feature-card {
