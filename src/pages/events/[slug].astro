@@ -256,7 +256,7 @@ console.log(event.event_img);
       cursor: pointer;
       margin: 20px 20px;
       padding: 20px;
-      width: 400px;
+      width: 100%;
       place-self: center;
     }
 
@@ -269,6 +269,12 @@ console.log(event.event_img);
     button :active {
       background-color: var(--brand-col);
       color: var(--bg-grey);
+    }
+    .button-wrapper {
+      display: flex;
+      justify-content: center; /* horizontal */
+      align-items: center; /* vertical */
+      height: 150px; /* or whatever fits your layout */
     }
 
     @media (min-width: 850px) {
@@ -325,12 +331,7 @@ console.log(event.event_img);
       .gratis {
         margin-left: 40px;
       }
-      .button-wrapper {
-        display: flex;
-        justify-content: center; /* horizontal */
-        align-items: center; /* vertical */
-        height: 150px; /* or whatever fits your layout */
-      }
+
       .underviser {
         font-size: 18px;
       }
