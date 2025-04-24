@@ -45,7 +45,9 @@ h5 {
   color: var(--secondary-col);
 }
 
-h4 {
+h4,
+span,
+button {
   font-family: "HelveticaNeue-Roman";
 }
 

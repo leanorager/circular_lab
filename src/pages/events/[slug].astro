@@ -41,45 +41,110 @@ console.log(event.event_img);
 
 <Layout>
   <body>
-    <header></header>
     <main>
-      <div>
-        <img src={event.event_img} alt="event billede" />
-        <div class="event-info">
-          <!-- <p class="dato">{event.event_date}</p> -->
-          <!-- <p class="tidspunkt">{event.event_start}-{event.event_end}</p> -->
-          <p class="dato">{formatDate(event.event_date)}</p>
-          <p class="tidspunkt">
-            {formatTimeOnly(event.event_start)} - {
-              formatTimeOnly(event.event_end)
-            }
-          </p>
+      <section class="event-info">
+        <img
+          src={`/${event.event_img}`}
+          class="event-img"
+          alt="event billede"
+        />
+
+        <h4 class="dato">{formatDate(event.event_date)}</h4>
+        <p class="tidspunkt">
+          {formatTimeOnly(event.event_start)} - {
+            formatTimeOnly(event.event_end)
+          }
+        </p>
+        <div class="bio">
+          <img
+            class="profil"
+            src="../../../public/nikolaj_storm_profil.png"
+            height="40"
+            width="40"
+            alt=""
+          />
+          <p class="underviser">NIKOLAJ STORM / UNDERVISER</p>
         </div>
-        <div>
-          <h2>Nikolaj Storm/Underviser</h2>
-          <p>
-            Circular Lab Manager på KEA. Han har 10 års erfaring fra
-            modebranchen, hvor han har hjulpet forskellige brands med grøn
-            omstilling, og er indehaver af sit eget brand, der gør brug af
-            cirkularitet.
-          </p>
-        </div>
-      </div>
+        <p class="dark_tekst">
+          Circular Lab Manager på KEA. Han har 10 års erfaring fra modebranchen,
+          hvor han har hjulpet forskellige brands med grøn omstilling, og er
+          indehaver af sit eget brand, der gør brug af cirkularitet.
+        </p>
+      </section>
+
       <article>
-        <h1>: {event.event_title}</h1>
+        <h3>{event.event_title}</h3>
+        <span class="gratis">GRATIS</span>
+        <span class="lokale-label">{event.event_location}</span>
+        <hr />
         <p>{event.event_description}</p>
-        <p>{event.event_type}</p>
+        <hr />
+        <div class="categories">
+          <p>{event.event_type}</p>
+          <p>repair</p>
+          <p>upcycling</p>
+          <p>genbrug</p>
+          <p>networking</p>
+          <p>DIY</p>
+        </div>
+        <hr />
+        <div class="button-wrapper">
+          <button id="myButton">TILMELD DIG</button>
+        </div>
+
+        <style>
+          .clicked {
+            background-color: var(--brand-col);
+            color: var(--bg-grey);
+          }
+        </style>
+
+        <script>
+          const button = document.querySelector<HTMLButtonElement>("#myButton");
+
+          if (button) {
+            button.addEventListener("click", () => {
+              const isClicked = button.classList.toggle("clicked");
+              button.innerText = isClicked ? "TILMELDT!" : "TILMELD DIG";
+            });
+          }
+        </script>
       </article>
     </main>
     <footer></footer>
   </body>
   <style>
+    :global(.main-wrapper) {
+      padding: 0 !important;
+    }
+
+    img,
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      padding: 20px 20px 0 20px;
+    }
+
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
     img {
-      grid-column: 1;
-      grid-row: 1;
       width: 100%;
       height: auto;
       object-fit: cover;
+    }
+
+    .event-img {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    body {
+      background-color: var(--bg-grey);
     }
 
     .dato {
@@ -87,25 +152,193 @@ console.log(event.event_img);
       grid-row: 1;
       place-self: start end;
       background-color: var(--brand-col);
-      width: 180px;
+      width: 150px;
       text-align: center;
-      padding: 2px;
+      padding: 10px;
+      color: var(--white);
+      margin-right: 20px;
+      margin-top: 20px;
     }
 
     .tidspunkt {
       grid-column: 1;
       grid-row: 1;
       place-self: start end;
-      margin-top: 60px;
+      margin-top: 70px;
       background-color: var(--brand-col);
-      width: 180px;
+      width: 150px;
       text-align: center;
-      padding: 2px;
+      padding: 10px;
+      color: var(--white);
+      margin-right: 20px;
     }
 
     .event-info {
       display: grid;
       width: 100%;
+      background-color: var(--darker-grey);
+      padding: 0 !important;
+    }
+
+    .dark_tekst {
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--darkest-grey);
+      margin-bottom: 20px;
+    }
+
+    .gratis {
+      color: var(--bg-grey);
+      background-color: var(--green);
+      border-radius: 50px;
+      padding: 4px 15px;
+      margin-left: 20px;
+    }
+
+    .lokale-label {
+      color: var(--bg-grey);
+      background-color: var(--purple);
+      border-radius: 50px;
+      padding: 4px 15px;
+    }
+    span {
+      font-weight: lighter;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #000000;
+      margin: 20px 20px;
+    }
+
+    .underviser {
+      color: var(--secondary-col);
+    }
+
+    .profil {
+      width: 20%;
+      height: 100%;
+    }
+
+    .profil img {
+      height: 100%;
+    }
+
+    .bio {
+      display: flex;
+      align-items: center;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      margin: 20px 20px;
+    }
+
+    .categories p {
+      background-color: var(--bg-grey);
+      padding: 5px 10px;
+      border-radius: 50px;
+      border: 2px solid black;
+      text-align: center;
+      width: fit-content;
+    }
+
+    button {
+      background-color: var(--bg-grey);
+      color: var(--brand-col);
+      border: 2px solid var(--brand-col);
+      border-radius: 50px;
+      font-size: 22px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 20px 20px;
+      padding: 20px;
+      width: 400px;
+      place-self: center;
+    }
+
+    button:hover {
+      background-color: var(--brand-col);
+      color: var(--bg-grey);
+      transition: 0.3s;
+    }
+
+    button :active {
+      background-color: var(--brand-col);
+      color: var(--bg-grey);
+    }
+
+    @media (min-width: 850px) {
+      main {
+        max-width: 1800px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+      }
+      .event-img {
+        max-height: 600px;
+      }
+      .profil {
+        width: 100%;
+        max-width: 100px;
+        height: auto;
+        box-sizing: none;
+        margin-left: 20px;
+      }
+      .event-img {
+        padding: 0;
+      }
+      .categories {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+        margin: 20px 20px;
+      }
+      .dato {
+        margin: 0;
+        width: 170px;
+      }
+
+      .tidspunkt {
+        margin: 55px 0 0 0;
+        width: 170px;
+      }
+      p,
+      h1,
+      h2,
+      h3,
+      h4 {
+        padding: 10px 40px 0 40px;
+      }
+
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+      hr,
+      .categories {
+        margin: 20px 40px 20px 40px;
+      }
+
+      .gratis {
+        margin-left: 40px;
+      }
+      .button-wrapper {
+        display: flex;
+        justify-content: center; /* horizontal */
+        align-items: center; /* vertical */
+        height: 150px; /* or whatever fits your layout */
+      }
+      .underviser {
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 1200px) {
+      .underviser {
+        font-size: 24px;
+      }
     }
   </style>
 </Layout>
